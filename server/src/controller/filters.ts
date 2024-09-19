@@ -1,5 +1,5 @@
 import { Entry } from "../models/types";
-import { countWords } from "../utils/countWords";
+import { countWords } from "../utils/countWords.ts";
 
 
 export function filterTitlesMoreThanFiveWords(entries: Entry[], wordsTitleNumber: number): Entry[] {
