@@ -12,3 +12,11 @@ export function filterTitlesMoreThanFiveWords(entries: Entry[], wordsTitleNumber
 
 }
 
+export function filterTitlesLessThanFiveWords(entries: Entry[],  wordsTitleNumber: number): Entry[] {
+
+    const entriesLessThanFiveWordsSorted = entries
+    .filter(entry => countWords(entry.title) <= wordsTitleNumber)
+    .sort((a, b) => b.points - a.points);
+
+    return entriesLessThanFiveWordsSorted;
+}
