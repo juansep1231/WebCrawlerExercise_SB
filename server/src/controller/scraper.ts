@@ -27,6 +27,5 @@ export async function scrapeHackerNews(): Promise<Entry[]> {
       entries.push({number, title, points, comments });
     });
   
-    console.log("scrapped",entries);
     return entries;
   }
