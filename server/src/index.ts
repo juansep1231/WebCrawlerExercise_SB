@@ -1,5 +1,5 @@
 import express from 'express';
-import { scrapeHackerNews } from './controller/scraper';
+import { scrapeHackerNews } from './controller/scraper.ts';
 
 
 const app = express();
