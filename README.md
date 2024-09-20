@@ -55,8 +55,6 @@ After installing the dependencies and ensuring both the client and server are ru
 
 By default, the application displays all retrieved entries. You can use the provided buttons to apply your desired filters.
 
-![](https://private-user-images.githubusercontent.com/78103491/369512525-1a93a61a-5546-4564-aa26-361fe0ecaa91.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjY4NTYzNjUsIm5iZiI6MTcyNjg1NjA2NSwicGF0aCI6Ii83ODEwMzQ5MS8zNjk1MTI1MjUtMWE5M2E2MWEtNTU0Ni00NTY0LWFhMjYtMzYxZmUwZWNhYTkxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTIwVDE4MTQyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTljMWYxNTY1NjRkZDNmYTIwOWM3YjI4YjYwNDQxYjI0MWE5ZjZhODQxMzk2Y2YxZjVjMDQ1MzhkOGJjNDFiODImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.2NlYKg2rCielbVZW17u7yQeuONWgIITOIKFoXm5ROvQ)
-
 ## Testing
 To run the tests navigate to the server directory and execute the following command in your terminal: `npm run test`
 #### Test cases
