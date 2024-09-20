@@ -1,0 +1,17 @@
+.container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .title {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+  }
+  
+  .details {
+    margin: 0;
+    color: #555;
+  }
+  
