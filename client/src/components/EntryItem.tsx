@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './EntryItem.module.css';
+import '../styles/EntryItem.css';
 import { Entry } from '../models/types';
 
 interface EntryItemProps {
@@ -9,11 +9,11 @@ interface EntryItemProps {
 
 const EntryItem: React.FC<EntryItemProps> = ({ entry }) => {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>
+    <div className="container">
+      <h3 className="title">
         {entry.number}. {entry.title}
       </h3>
-      <p className={styles.details}>
+      <p className="details">
         Points: {entry.points} | Comments: {entry.comments}
       </p>
     </div>

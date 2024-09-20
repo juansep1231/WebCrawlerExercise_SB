@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './EntryList.module.css';
+import '../styles/EntryList.css';
 import { Entry } from '../models/types';
 import EntryItem from './EntryItem';
 
@@ -10,7 +10,7 @@ interface EntryListProps {
 
 const EntryList: React.FC<EntryListProps> = ({ entries }) => {
   return (
-    <div className={styles.list}>
+    <div className="list">
       {entries.map(entry => (
         <EntryItem key={entry.number} entry={entry} />
       ))}
