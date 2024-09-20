@@ -46,7 +46,7 @@ Follow these steps to set up and run the project on your local machine:
 - Install dependencies 
     ```bash 
     npm install 
-- Run the server
+- Run the client
     ```bash 
     npm run start:client
 ## Usage 
