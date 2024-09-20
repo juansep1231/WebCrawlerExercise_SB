@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../styles/EntryItem.css';
 import { Entry } from '../models/types';
 
