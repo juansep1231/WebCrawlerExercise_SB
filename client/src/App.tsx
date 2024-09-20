@@ -1,40 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Entry } from './models/types';
-import axios from 'axios';
 import EntryList from './components/EntryList';
+import { useFetchEntries } from './hooks/fetchEntriesHook';
 
 const App: React.FC = () => {
-  const [entries, setEntries] = useState<Entry[]>([]);
+
   const [filter, setFilter] = useState<'all' | 'longTitle' | 'shortTitle'>('all');
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>('');
 
-  useEffect(() => {
-    fetchEntries();
-  }, [filter]);
-
-  const fetchEntries = async () => {
-    try {
-      setLoading(true);
-      setError('');
-      let endpoint = '/api/entries'; 
-
-      if (filter === 'longTitle') {
-        endpoint = '/api/entries/moreThanFiveWords';
-      } else if (filter === 'shortTitle') {
-        endpoint = '/api/entries/lessThanFiveWords';
-      }
-
-      const response = await axios.get<Entry[]>(endpoint);
-      setEntries(response.data);
-      setLoading(false);
-    } catch (err) {
-      setError('Error fetching entries.');
-      setLoading(false);
-    }
-  };
-
+  const {loading, error, entries} = useFetchEntries(filter);
+  
   const handleFilterChange = (newFilter: 'all' | 'longTitle' | 'shortTitle') => {
     setFilter(newFilter);
   };
@@ -62,7 +36,7 @@ const App: React.FC = () => {
           Titles with less than or equal to five words
         </button>
       </div>
-      {loading && <p>Loading entries...</p>}
+      {loading && <p>Loading entries</p>}
       {error && <p>{error}</p>}
       {!loading && !error && <EntryList entries={entries} />}
     </div>
