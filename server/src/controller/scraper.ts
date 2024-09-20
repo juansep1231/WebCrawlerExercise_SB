@@ -2,7 +2,6 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import { Entry } from '../models/types.ts';
 
-
 function extractNumber(text: string, regex: RegExp): number {
   const match = text.match(regex);
   return match ? parseInt(match[1]) : 0;
@@ -33,23 +32,24 @@ function getComments(element: cheerio.Cheerio): number {
 }
 
 export async function scrapeHackerNews(): Promise<Entry[]> {
-  const { data: entryData } = await axios.get('https://news.ycombinator.com/');
-  const $ = cheerio.load(entryData);
-  const entries: Entry[] = [];
+  try {
+    const { data: entryData } = await axios.get('https://news.ycombinator.com/');
+    const $ = cheerio.load(entryData);
+    const entries: Entry[] = [];
   
-  $('.athing').each((index, element) => {
-    if (index >= 30) return false; 
+    $('.athing').each((index, element) => {
+      if (index >= 30) return false; 
   
-    const number = getNumber($(element)); 
+      const number = getNumber($(element)); 
+      const title = getTitle($(element));
+      const points = getPoints($(element));
+      const comments = getComments($(element));
+  
+      entries.push({ number, title, points, comments });
+    });
     
-    const title = getTitle($(element));
-    
-    const points = getPoints($(element));
-
-    const comments = getComments($(element));
-
-    entries.push({ number, title, points, comments });
-  });
-
-  return entries;
+    return entries;
+  } catch (error) {
+    throw new Error('Failed to scrape Hacker News');
+  }
 }
