@@ -4,7 +4,7 @@
 
 This repository contains the code for a web crawler implemented with **Express** for the server and **React** for the frontend, both  using **TypeScript**. The web crawler is designed to extract information from Hacker News entries (`https://news.ycombinator.com/`), retrieving details such as rank, title, number of comments, and points for each entry. Additionally, the application allows users to filter entries based on the number of words in the title:
 - **Titles with More Than Five Words:** Sorted in descending order by the number of comments.
-- **Titles with Five Words or Fewer:** Sorted by the number of points.
+- **Titles with Five Words or Fewer:** Sorted in descending order by the number of points.
 
 The project also includes automated unit testing using **Jest** to ensure the reliability of the server functions.
 
