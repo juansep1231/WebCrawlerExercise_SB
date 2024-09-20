@@ -20,14 +20,14 @@ export function getTitle(element: cheerio.Cheerio): string {
 export function getPoints(element: cheerio.Cheerio): number {
   const subtext = (element).next().find('.subtext');
   const pointsText = subtext.find('.score').text();
-  const points = extractNumber(pointsText, /(\d+)\s+points/); 
+  const points = extractNumber(pointsText, /(\d+)\s+points?/); 
   return points;
 }
 
 export function getComments(element: cheerio.Cheerio): number {
   const subtext = (element).next().find('.subtext');
   const commentsText = subtext.find('a').last().text();
-  const comments = extractNumber(commentsText, /(\d+)\scomment/);  
+  const comments = extractNumber(commentsText, /(\d+)\scomments?/);  
   return comments;
 }
 
